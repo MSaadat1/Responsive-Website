@@ -1,0 +1,371 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.container {
+  display: grid;
+  max-width: 1200px;
+  margin: auto;
+  /* border: 1px solid grey; */
+}
+
+.logo {
+  width: 80px;
+}
+
+.navBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navLogo {
+  display: flex;
+}
+
+.navLogo p {
+  margin: 30px 0px;
+}
+
+.navTag {
+  display: flex;
+}
+
+.navTag a {
+  text-decoration: none;
+  padding: 20px;
+  font-weight: bolder;
+}
+
+.navTag a:hover {
+  text-decoration: underline;
+}
+.toggle-button {
+  position: relative;
+  top: 0.75rem;
+  right: 0.5rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: grey;
+  border-radius: 10px;
+}
+.about {
+  text-align: center;
+}
+
+.about > p {
+  text-align: center;
+  padding: 10px;
+}
+
+.aboutContainer {
+  display: grid;
+  grid-template-areas: "firstAbout secondAbout thirdAbout";
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+}
+
+.firstAbout {
+  display: grid;
+  grid-area: firstAbout;
+}
+
+.secondAbout {
+  display: grid;
+  grid-area: secondAbout;
+}
+
+.thirdAbout {
+  display: grid;
+  grid-area: thirdAbout;
+}
+
+.aboutImage {
+  width: 80%;
+  height: 250px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  margin: auto;
+}
+
+.details-one,
+.details-two,
+.details-three {
+  display: grid;
+  margin: auto;
+  padding: 0 10%;
+}
+
+.ourTeam {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.ourTeam > p {
+  display: inline-block;
+  text-align: center;
+  padding: 20px;
+}
+
+.teamImage {
+  display: grid;
+  grid-template-areas: "firstImage secondImage thirdImage fourImage";
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+  gap: 15px;
+}
+
+.firstImage {
+  display: grid;
+  grid-area: firstImage;
+}
+.secondImage {
+  display: grid;
+  grid-area: secondImage;
+}
+.thirdImage {
+  display: grid;
+  grid-area: thirdImage;
+}
+.fourImage {
+  display: grid;
+  grid-area: fourImage;
+}
+
+.firstImage img,
+.secondImage img,
+.thirdImage img,
+.fourImage img {
+  width: 250px;
+  height: 180px;
+  border: 1px solid grey;
+  border-radius: 3px;
+}
+
+.firstImage > ul,
+.secondImage > ul,
+.thirdImage > ul,
+.fourImage > ul {
+  list-style: none;
+  padding: 0;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+ul > li {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+li > a {
+  background-color: lightgray;
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  color: white;
+}
+
+li > a:hover {
+  background-color: aqua;
+}
+
+.contact {
+  background-color: grey;
+  margin-top: 40px;
+}
+
+.contactSocail {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.contactSocail > a {
+  padding: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+a > .social-icons {
+  background-color: antiquewhite;
+  padding: 5px;
+  border: none;
+  border-radius: 50%;
+}
+
+a > .social-icons:hover {
+  background-color: aqua;
+}
+
+.contactAdd {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+footer {
+  text-align: center;
+  background-color: grey;
+  border-top: 1px solid black;
+}
+
+@media (max-width: 768px) {
+  .toggle-button {
+    display: flex;
+    padding: 5px;
+  }
+  .navTag {
+    display: none;
+    width: 100%;
+  }
+  .navTag.active {
+    display: flex;
+  }
+
+  .aboutContainer {
+    display: grid;
+    gap: 10px;
+  }
+
+  .firstAbout {
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .details-one {
+    grid-column: 2/3;
+  }
+  .secondAbout {
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 2/2;
+  }
+  .details-two {
+    grid-column: 2/3;
+  }
+  .thirdAbout {
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 3/3;
+  }
+  .details-three {
+    grid-column: 2/3;
+  }
+
+  .aboutImage {
+    width: 80%;
+  }
+
+  .details-one,
+  .details-two,
+  .details-three {
+    margin-top: 0;
+    padding: 0 2px;
+  }
+
+  .teamImage {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+      "firstImage secondImage"
+      "thirdImage fourImage";
+  }
+
+  .contactAdd {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 600px) {
+  .toggle-button {
+    display: flex;
+    padding: 5px;
+  }
+  .navTag {
+    display: none;
+  }
+  .navTag.active {
+    display: flex;
+  }
+
+  .container {
+    display: block;
+    margin: auto;
+  }
+
+  .aboutContainer {
+    display: grid;
+    grid-template-areas:
+      "firstAbout"
+      "details-one"
+      "secondAbout"
+      "details-two"
+      "thirdAbout"
+      "details-third";
+  }
+
+  .firstAbout,
+  .secondAbout,
+  .thirdAbout {
+    display: block;
+    text-align: center;
+  }
+
+  .details-one,
+  .details-two,
+  .details-three {
+    text-align: center;
+    padding: 0;
+  }
+
+  .teamImage {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+      "firstImage"
+      "secondImage"
+      "thirdImage"
+      "fourImage";
+  }
+
+  .firstImage > ul li,
+  .secondImage > ul li,
+  .thirdImage > ul li,
+  .fourImage > ul li {
+    text-align: center;
+  }
+
+  .contactSocail {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .contactAdd {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    padding-top: 0;
+  }
+}
